@@ -34,13 +34,14 @@ header h2 {
     font-style: italic;
     color: steelblue;
     text-shadow: 5px 5px 12px;
+    padding: 15px 0 2px;
 }
 header h2, header h3 {
     margin-bottom: 0;
 }
 .logoimage {
     float: left;
-    margin-right: 15px;
+    padding: 10px 1.5em;
 }
 
 /* Horizontal inline navigation menu
@@ -128,7 +129,6 @@ main {
 }
 #nav_list ul li {
     width: 90%;
-    border: 1px solid steelblue;
     margin: 0 auto 0.5em; /* First value is top, second it both sides, third is bottom */
 }
 #nav_list ul li a {
@@ -138,6 +138,8 @@ main {
     background-color: lightsteelblue;
     padding: 0.5em 0 0.5em 0.5em;
     color: black;
+    border-radius: 25px;
+    transition: all 1s;
 }
 #nav_list ul li a:hover {
     color: darkred;
@@ -206,4 +208,49 @@ footer p {
     font-weight: bold;
     text-align: center;
     font-variant: small-caps;
+}
+/* Hide the mobilemenu */
+#mobilemenu {
+    display: none;
+}
+/* Media Queries */
+@media only screen and (max-width: 900px) {
+    body {
+        box-shadow: none;
+        font-size: 90%;
+    }
+}
+@media only screen and (max-width: 767px) {
+    #nav_menu {
+        display: none;
+    }
+    #mobilemenu {
+        display: block;
+    }
+    .slicknav_menu {
+        background-color: steelblue !important;
+    }
+    header h2 {
+        font-size: 200%;
+    }
+    section, aside {
+        float: none;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0.5em;
+    }
+    #logoimage {
+        float: none;
+        padding: 0.5em;
+        display: block;
+        margin: 0 auto;
+    }
+    header h2, header h3 {
+        text-align: center;
+    }
+}
+@media only screen and (max-width: 479px) {
+    header h2, header h3, p {
+        font-size: 90%;
+    }
 }
